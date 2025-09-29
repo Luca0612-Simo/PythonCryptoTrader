@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RegisterDialog</class>
+ <widget class="QDialog" name="RegisterDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>320</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Registro</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+    background-color: #F5F6FA;
+    font-family: "Segoe UI", "Roboto", sans-serif;
+    font-size: 14px;
+    color: #333;
+}</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>40</y>
+     <width>260</width>
+     <height>240</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Cree su usuario</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+    font-size: 13px;
+    color: #444;
+}</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="UserTxt">
+      <property name="placeholderText">
+       <string>Ingrese un nombre de usuario</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background: #fff;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    padding: 6px;
+}
+QLineEdit:focus {
+    border: 1px solid #4CAF50;
+}</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Cree su contraseña</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+    font-size: 13px;
+    color: #444;
+}</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="PassTxt">
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="placeholderText">
+       <string>Ingrese una contraseña</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background: #fff;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    padding: 6px;
+}
+QLineEdit:focus {
+    border: 1px solid #4CAF50;
+}</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="RegistroBtn">
+        <property name="text">
+         <string>Registrarse</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+}
+QPushButton:hover {
+    background-color: #45a049;
+}
+QPushButton:pressed {
+    background-color: #388E3C;
+}</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
