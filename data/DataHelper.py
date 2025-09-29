@@ -1,8 +1,10 @@
 import sqlobject as SO
 from decimal import Decimal
+from dotenv import load_dotenv
+import os
 
-
-DB_URI = 'mysql://guest:1234@localhost/data_db'
+load_dotenv()
+DB_URI = os.getenv("DB_URI")
 SO.sqlhub.processConnection = SO.connectionForURI(DB_URI)
 
 class Usuario(SO.SQLObject):
