@@ -3,6 +3,7 @@ from PyQt6.QtWidgets import QApplication,QWidget,QPushButton,QLineEdit,QLabel,QM
 from screens.Main_ui import MainWindow_ui
 from business import Logic
 from presentation.BuyDialog import BuyDialog
+from presentation.SellDialog import SellDialog
 
 
 class mainWindow (QMainWindow, MainWindow_ui):
@@ -15,6 +16,7 @@ class mainWindow (QMainWindow, MainWindow_ui):
 
         self.DepositBtn.clicked.connect(self.DepositBtnClick)
         self.BuyBtn.clicked.connect(self.BuyBtnClick)
+        self.SellBtn.clicked.connect(self.SellBtnClick)
 
     def actualizarSaldo(self):
         usuario = Logic.serial.cargarUnUsuario(self.username)
@@ -34,4 +36,10 @@ class mainWindow (QMainWindow, MainWindow_ui):
         dialog=BuyDialog(self.username)
         if dialog.exec():
             self.actualizarSaldo()
+
+    def SellBtnClick(self):
+        dialog = SellDialog(self.username)
+        if dialog.exec():
+            self.actualizarSaldo()
+
 
