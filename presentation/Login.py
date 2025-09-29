@@ -5,6 +5,8 @@ from screens.Login_ui import Ui_MainWindow
 import sys 
 from business.Logic import login
 from presentation.Register import RegisterWindow
+from presentation.MainWindow import mainWindow
+
 class LoginWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
@@ -24,6 +26,9 @@ class LoginWindow(QMainWindow, Ui_MainWindow):
         if login(username, password):
             QMessageBox.information(self, "Exito", "Login exitoso")
 
+            self.main = mainWindow(username)
+            self.main.show()
+            self.close()
         else:
             QMessageBox.warning(self, "Error", "Datos incorrectos")
 
