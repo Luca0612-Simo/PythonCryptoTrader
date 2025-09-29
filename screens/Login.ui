@@ -7,193 +7,190 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>514</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Login</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">QWidget {
-    background-color: #F5F5F5;
+    background-color: #F5F6FA;
+    font-family: "Segoe UI", "Roboto", sans-serif;
 }</string>
    </property>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>170</y>
-      <width>251</width>
-      <height>271</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="RegistrarseBtn">
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
+   <layout class="QVBoxLayout" name="verticalLayout_root">
+    <item>
+     <spacer name="topSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>80</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+
+    <item>
+     <layout class="QHBoxLayout" name="horizontalCenterLayout">
+      <item>
+       <spacer name="leftSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item alignment="Qt::AlignHCenter">
+       <widget class="QFrame" name="card">
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>300</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>350</width>
+          <height>400</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame#card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+}</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_card">
+         <item>
+          <widget class="QLabel" name="titleLbl">
+           <property name="styleSheet">
+            <string notr="true">font-size: 20px; font-weight: bold; color: #333;</string>
+           </property>
+           <property name="text">
+            <string>Iniciar Sesión</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="UserTxt">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    background-color: #fff;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 14px;
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Usuario</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="PassTxt">
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    background-color: #fff;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 14px;
+}</string>
+           </property>
+           <property name="placeholderText">
+            <string>Contraseña</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="IngresarBtn">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
     background-color: #4CAF50;
     color: white;
     font-size: 14px;
     padding: 8px;
     border-radius: 6px;
 }
-
 QPushButton:hover {
+    background-color: #45a049;
+}
+QPushButton:pressed {
     background-color: #388E3C;
 }</string>
-         </property>
-         <property name="text">
-          <string>Registrarse</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_4">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
+           </property>
+           <property name="text">
+            <string>Ingresar</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="RegistrarseBtn">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    background-color: #e0e0e0;
+    color: #333;
     font-size: 13px;
-    color: #333333;
-}</string>
-       </property>
-       <property name="text">
-        <string>Ingrese su usuario</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="UserTxt">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    background-color: white;
-    border: 1px solid #CCCCCC;
-    border-radius: 4px;
     padding: 6px;
-}</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_3">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_2">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-    font-size: 13px;
-    color: #333333;
-}</string>
-       </property>
-       <property name="text">
-        <string>Ingrese su contraseña</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="PassTxt">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    background-color: white;
-    border: 1px solid #CCCCCC;
-    border-radius: 4px;
-    padding: 6px;
-}</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="IngresarBtn">
-         <property name="styleSheet">
-          <string notr="true">QPushButton {
-    background-color: #4CAF50;
-    color: white;
-    font-size: 14px;
-    padding: 8px;
     border-radius: 6px;
 }
-
 QPushButton:hover {
-    background-color: #388E3C;
+    background-color: #d5d5d5;
 }</string>
-         </property>
-         <property name="text">
-          <string>Ingresar</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
+           </property>
+           <property name="text">
+            <string>Registrarse</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="rightSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+
+    <item>
+     <spacer name="bottomSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>80</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

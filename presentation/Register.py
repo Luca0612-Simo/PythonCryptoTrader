@@ -1,8 +1,8 @@
 from PyQt6.QtWidgets import QApplication,QWidget,QPushButton,QLineEdit,QLabel,QMainWindow,QTableWidgetItem,QDialog,QFileDialog,QMessageBox
-from screens.Register_ui import Ui_Dialog
+from screens.Register_ui import Ui_RegisterDialog
 from business.Logic import registrarUsuario
 
-class RegisterWindow(QDialog, Ui_Dialog):
+class RegisterWindow(QDialog, Ui_RegisterDialog):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
