@@ -2,6 +2,7 @@ from presentation.depositDialog import DepositDialog
 from PyQt6.QtWidgets import QApplication,QWidget,QPushButton,QLineEdit,QLabel,QMainWindow,QTableWidgetItem,QDialog,QFileDialog,QMessageBox
 from screens.Main_ui import MainWindow_ui
 from business import Logic
+from presentation.BuyDialog import BuyDialog
 
 
 class mainWindow (QMainWindow, MainWindow_ui):
@@ -13,6 +14,7 @@ class mainWindow (QMainWindow, MainWindow_ui):
         self.actualizarSaldo()
 
         self.DepositBtn.clicked.connect(self.DepositBtnClick)
+        self.BuyBtn.clicked.connect(self.BuyBtnClick)
 
     def actualizarSaldo(self):
         usuario = Logic.serial.cargarUnUsuario(self.username)
@@ -27,4 +29,9 @@ class mainWindow (QMainWindow, MainWindow_ui):
         if dialog.exec():
             self.actualizarSaldo()
             #QMessageBox.information(self, "Operacion exitosa", "Se agrego dinero a su cuenta")
+
+    def BuyBtnClick(self):
+        dialog=BuyDialog(self.username)
+        if dialog.exec():
+            self.actualizarSaldo()
 
