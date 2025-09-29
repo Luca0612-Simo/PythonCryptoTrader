@@ -14,67 +14,80 @@ class MainWindow_ui(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
         MainWindow.setStyleSheet("QMainWindow {\n"
-"        background-color: #f5f5f5; /* Fondo gris muy claro */\n"
-"    }\n"
+"    background-color: #F5F6FA;\n"
+"    font-family: \"Segoe UI\", \"Roboto\", sans-serif;\n"
+"    font-size: 14px;\n"
+"    color: #333;\n"
+"}\n"
 "\n"
-"    QLabel {\n"
-"        font-size: 14px;\n"
-"        font-weight: bold;\n"
-"        color: #333;\n"
-"    }\n"
+"QLabel {\n"
+"    font-size: 14px;\n"
+"    font-weight: 500;\n"
+"    color: #444;\n"
+"}\n"
 "\n"
-"    QPushButton {\n"
-"        background-color: #4CAF50;   /* Verde agradable */\n"
-"        color: white;\n"
-"        border-radius: 8px;\n"
-"        padding: 8px 16px;\n"
-"        font-size: 14px;\n"
-"    }\n"
+"QPushButton {\n"
+"    background-color: #4CAF50;\n"
+"    color: white;\n"
+"    border-radius: 6px;\n"
+"    padding: 8px 14px;\n"
+"    font-size: 14px;\n"
+"    border: none;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: #45a049;\n"
+"}\n"
+"QPushButton:pressed {\n"
+"    background-color: #388E3C;\n"
+"}\n"
 "\n"
-"    QPushButton:hover {\n"
-"        background-color: #45a049;  /* Verde más oscuro al pasar el mouse */\n"
-"    }\n"
-"\n"
-"    QPushButton:pressed {\n"
-"        background-color: #3e8e41;\n"
-"    }\n"
-"\n"
-"    QComboBox {\n"
-"        border: 1px solid #aaa;\n"
-"        border-radius: 6px;\n"
-"        padding: 4px;\n"
-"        background-color: white;\n"
-"    }")
+"QListView {\n"
+"    background-color: #fff;\n"
+"    border: 1px solid #CCC;\n"
+"    border-radius: 6px;\n"
+"    padding: 6px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"QListView:focus {\n"
+"    border: 1px solid #4CAF50;\n"
+"}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(150, 110, 341, 321))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.saldolbl = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
+        self.centralLayout = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.centralLayout.setObjectName("centralLayout")
+        spacerItem = QtWidgets.QSpacerItem(20, 80, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.centralLayout.addItem(spacerItem)
+        self.contentLayout = QtWidgets.QVBoxLayout()
+        self.contentLayout.setObjectName("contentLayout")
+        self.topRow = QtWidgets.QHBoxLayout()
+        self.topRow.setSpacing(16)
+        self.topRow.setObjectName("topRow")
+        self.saldolbl = QtWidgets.QLabel(parent=self.centralwidget)
         self.saldolbl.setObjectName("saldolbl")
-        self.horizontalLayout_3.addWidget(self.saldolbl)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_3.addItem(spacerItem)
-        self.DepositBtn = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.topRow.addWidget(self.saldolbl)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.topRow.addItem(spacerItem1)
+        self.CreateBtn = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.CreateBtn.setObjectName("CreateBtn")
+        self.topRow.addWidget(self.CreateBtn)
+        self.DepositBtn = QtWidgets.QPushButton(parent=self.centralwidget)
         self.DepositBtn.setObjectName("DepositBtn")
-        self.horizontalLayout_3.addWidget(self.DepositBtn)
-        self.BuyBtn = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.topRow.addWidget(self.DepositBtn)
+        self.BuyBtn = QtWidgets.QPushButton(parent=self.centralwidget)
         self.BuyBtn.setObjectName("BuyBtn")
-        self.horizontalLayout_3.addWidget(self.BuyBtn)
-        self.SellBtn = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.topRow.addWidget(self.BuyBtn)
+        self.SellBtn = QtWidgets.QPushButton(parent=self.centralwidget)
         self.SellBtn.setObjectName("SellBtn")
-        self.horizontalLayout_3.addWidget(self.SellBtn)
-        self.verticalLayout.addLayout(self.horizontalLayout_3)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout.addItem(spacerItem1)
-        self.ListComboBox = QtWidgets.QComboBox(parent=self.verticalLayoutWidget)
-        self.ListComboBox.setObjectName("ListComboBox")
-        self.verticalLayout.addWidget(self.ListComboBox)
+        self.topRow.addWidget(self.SellBtn)
+        self.contentLayout.addLayout(self.topRow)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.contentLayout.addItem(spacerItem2)
+        self.CryptoList = QtWidgets.QListView(parent=self.centralwidget)
+        self.CryptoList.setObjectName("CryptoList")
+        self.contentLayout.addWidget(self.CryptoList)
+        self.centralLayout.addLayout(self.contentLayout)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 80, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.centralLayout.addItem(spacerItem3)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
@@ -91,6 +104,7 @@ class MainWindow_ui(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.saldolbl.setText(_translate("MainWindow", "Saldo: 0"))
+        self.CreateBtn.setText(_translate("MainWindow", "Crear Moneda"))
         self.DepositBtn.setText(_translate("MainWindow", "Depositar"))
         self.BuyBtn.setText(_translate("MainWindow", "Comprar"))
         self.SellBtn.setText(_translate("MainWindow", "Vender"))

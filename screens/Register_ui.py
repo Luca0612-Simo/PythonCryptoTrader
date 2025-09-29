@@ -9,15 +9,18 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(515, 473)
-        Dialog.setStyleSheet("QDialog {\n"
-"    background-color: #F5F5F5;\n"
+class Ui_RegisterDialog(object):
+    def setupUi(self, RegisterDialog):
+        RegisterDialog.setObjectName("RegisterDialog")
+        RegisterDialog.resize(420, 320)
+        RegisterDialog.setStyleSheet("QDialog {\n"
+"    background-color: #F5F6FA;\n"
+"    font-family: \"Segoe UI\", \"Roboto\", sans-serif;\n"
+"    font-size: 14px;\n"
+"    color: #333;\n"
 "}")
-        self.verticalLayoutWidget = QtWidgets.QWidget(parent=Dialog)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(160, 130, 191, 231))
+        self.verticalLayoutWidget = QtWidgets.QWidget(parent=RegisterDialog)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(80, 40, 260, 240))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -25,32 +28,39 @@ class Ui_Dialog(object):
         self.label = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
         self.label.setStyleSheet("QLabel {\n"
 "    font-size: 13px;\n"
-"    color: #333333;\n"
+"    color: #444;\n"
 "}")
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
         self.UserTxt = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
         self.UserTxt.setStyleSheet("QLineEdit {\n"
-"    background-color: white;\n"
-"    border: 1px solid #CCCCCC;\n"
-"    border-radius: 4px;\n"
+"    background: #fff;\n"
+"    border: 1px solid #CCC;\n"
+"    border-radius: 6px;\n"
 "    padding: 6px;\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #4CAF50;\n"
 "}")
         self.UserTxt.setObjectName("UserTxt")
         self.verticalLayout.addWidget(self.UserTxt)
         self.label_2 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
         self.label_2.setStyleSheet("QLabel {\n"
 "    font-size: 13px;\n"
-"    color: #333333;\n"
+"    color: #444;\n"
 "}")
         self.label_2.setObjectName("label_2")
         self.verticalLayout.addWidget(self.label_2)
         self.PassTxt = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
+        self.PassTxt.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.PassTxt.setStyleSheet("QLineEdit {\n"
-"    background-color: white;\n"
-"    border: 1px solid #CCCCCC;\n"
-"    border-radius: 4px;\n"
+"    background: #fff;\n"
+"    border: 1px solid #CCC;\n"
+"    border-radius: 6px;\n"
 "    padding: 6px;\n"
+"}\n"
+"QLineEdit:focus {\n"
+"    border: 1px solid #4CAF50;\n"
 "}")
         self.PassTxt.setObjectName("PassTxt")
         self.verticalLayout.addWidget(self.PassTxt)
@@ -63,23 +73,28 @@ class Ui_Dialog(object):
 "    background-color: #4CAF50;\n"
 "    color: white;\n"
 "    font-size: 14px;\n"
-"    padding: 8px;\n"
+"    padding: 8px 14px;\n"
 "    border-radius: 6px;\n"
+"    border: none;\n"
 "}\n"
-"\n"
 "QPushButton:hover {\n"
+"    background-color: #45a049;\n"
+"}\n"
+"QPushButton:pressed {\n"
 "    background-color: #388E3C;\n"
 "}")
         self.RegistroBtn.setObjectName("RegistroBtn")
         self.horizontalLayout.addWidget(self.RegistroBtn)
         self.verticalLayout.addLayout(self.horizontalLayout)
 
-        self.retranslateUi(Dialog)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.retranslateUi(RegisterDialog)
+        QtCore.QMetaObject.connectSlotsByName(RegisterDialog)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, RegisterDialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "Cree su usuario"))
-        self.label_2.setText(_translate("Dialog", "Cree su contraseña"))
-        self.RegistroBtn.setText(_translate("Dialog", "Registrarse"))
+        RegisterDialog.setWindowTitle(_translate("RegisterDialog", "Registro"))
+        self.label.setText(_translate("RegisterDialog", "Cree su usuario"))
+        self.UserTxt.setPlaceholderText(_translate("RegisterDialog", "Ingrese un nombre de usuario"))
+        self.label_2.setText(_translate("RegisterDialog", "Cree su contraseña"))
+        self.PassTxt.setPlaceholderText(_translate("RegisterDialog", "Ingrese una contraseña"))
+        self.RegistroBtn.setText(_translate("RegisterDialog", "Registrarse"))
